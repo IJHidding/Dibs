@@ -2,8 +2,8 @@ Package: DIBS
 Type: Package
 Title: Data Imputation Benchmark Software
 Version: 1.0.0
-Author: Iwan Hidding
-Maintainer: iwan_hidding@live.nl
+Authors: Iwan Hidding [aut, cre]
+Maintainer: Iwan Hidding <iwan_hidding@live.nl>
 Description: The DIBS function performs imputation benchmarking for datasets containing NA's or zeros. 
     It will introduce NA's in data where it does not yet exist, then impute those values back in using variables 
     with a high correlation to the variable to be imputed. It compares the new values with the original values,
@@ -16,7 +16,6 @@ Description: The DIBS function performs imputation benchmarking for datasets con
     poorly performing variables in the dataset. A list of poorly performing variables used in the benchmark is added at the 
     end aswell as any variables for which not enough correlated other variables could be found. 
 Depends: R (>= 3.6.0)
-
 Imports:
     dplyr,
     ggplot2,

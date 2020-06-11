@@ -12,14 +12,12 @@
 #   Install Package:           'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-
 library(mice)
 library(dplyr)
 library(gridExtra)
 library(ggplot2)
 library(reshape2)
 library(grid)
-
 dibs <- function(dataset, transform_method="none",variable_on="column", impute_setting=1, impute_method, listofzeros=c(10, 25, 50, 75, 90), imp_method=c("norm", "pmm", "rf", "knn"), cor_method="pearson", numberofmetabolites= 1, cutoff = 0.55, minimum_metabolites=4, maximum_metabolites=10, low_cor_cutoff=0.4) {
   # A quick check to ensure that the data is in the right format for the rest of the analysis
   if (variable_on == "row") {
@@ -287,6 +285,7 @@ dibs <- function(dataset, transform_method="none",variable_on="column", impute_s
       rownames(completed_df) <- completed_df$Row.names
       completed_df <- subset(completed_df, select=  -Row.names)
     }
+    completed_df[completed_df < 0] <- 0.0
     # A couple transformation methods added to give more options for data handling.
     if (transform_method=="none"){
       return(completed_df)
