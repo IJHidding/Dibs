@@ -1,7 +1,12 @@
 # Dibs
 The DIBS function performs imputation benchmarking for datasets containing NA's or zeros. 
 
-    
+## Installing
+To install and use this library in your R, dowwnload DIBS.1.0.0.tar.gz and then run:
+    install.packages(path_to_file, repos = NULL, type="source")
+Where path_to_file will be something like "C:\\DIBS.1.0.0.tar.gz" on windows.
+Or "/home/DIBS.1.0.0.tar.gz" on UNIX. 
+
 Package: DIBS
 Type: Package
 Title: Data Imputation Benchmark Software
