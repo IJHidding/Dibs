@@ -15,8 +15,7 @@ Description: The DIBS function performs imputation benchmarking for datasets con
     indication if there is any correlation between the variables; density plots showing a percentage of well performing and 
     poorly performing variables in the dataset. A list of poorly performing variables used in the benchmark is added at the 
     end aswell as any variables for which not enough correlated other variables could be found. 
-Depends: R (>= 3.6.0)
-Imports:
+Depends: R (>= 3.6.0),
     dplyr,
     ggplot2,
     grid,
