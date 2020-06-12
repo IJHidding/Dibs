@@ -90,7 +90,17 @@ Imports:
     reshape2
 License: GNU Lesser General Public License
 Encoding: UTF-8
-LazyData: true
+
+# Running examples:
+
+Only run the benchmark:
+Correlation_output <- dibs(dataset)
+
+Fully impute the data with the outcome of the benchmark:
+Imputed_dataframe <- dibs(dataset, impute_setting=2)
+
+Fully impute the data with the outcome of the benchmark where the benchmark is performed on missingness of 10, 20 and 30%.
+Imputed_dataframe <- dibs(dataset, impute_setting=2, listofzero=c(10, 20, 30))
 
 # Next steps
 This is version 1.0.0 of the DIBS tool. It has been created based on metabolite data, but its been made available to be used on other types
@@ -101,3 +111,7 @@ behaviour.
 Performance is an additional big part. Multiprocessing options should be relatively easy to implement and will significantly enhance performance,
 as the whole benchmark can be split up by, for example, metabolite and this can be split over all available cores which will be likely many times 
 faster than the current runtime. 
+
+## Disclaimer
+While the random forest method is set as default it seems to rarely fail with some benchmarking variables. The error seems to be inside of the Mice library and no clear reason has been found for the error. 
+Recommended to simply restart the function if it fails. 
